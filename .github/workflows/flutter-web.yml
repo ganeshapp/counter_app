@@ -41,3 +41,10 @@ jobs:
           git add .
           git commit -m "Deploy Flutter Web"
           git push --force git@github.com:ganeshapp/counter_app.git gh-pages
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: /
+          branch: gh-pages
