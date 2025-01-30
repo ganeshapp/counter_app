@@ -42,9 +42,9 @@ jobs:
           git commit -m "Deploy Flutter Web"
           git push --force git@github.com:ganeshapp/counter_app.git gh-pages
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: /
-          branch: gh-pages
+      - name: Setup SSH for GitHub Pages
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.ACTIONS_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
