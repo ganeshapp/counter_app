@@ -9,6 +9,11 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write # Required to push to the gh-pages branch
+      pages: write    # Required for GitHub Pages deployment
+      id-token: write # Required for GitHub Pages deployment
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
