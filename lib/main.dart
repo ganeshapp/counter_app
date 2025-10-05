@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Counter',
+      title: 'Flutter Counters',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: const CounterPage(),
     );
@@ -57,7 +57,7 @@ class _CounterPageState extends State<CounterPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const Text('You have pushed the button this many times haha:'),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
